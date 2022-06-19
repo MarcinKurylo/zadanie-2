@@ -1,0 +1,23 @@
+<h1 class="header-primary">{{ recipeId ? 'Update Recipe' : 'Create Recipe' }}</h1>
+<form *ngIf="recipe || (!recipe && !recipeId)" [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="form">
+
+  <input type="text" formControlName="name" placeholder="Recipe name" class="form__input">
+
+  <textarea type="text" formControlName="description" placeholder="Recipe description" class="form__input"></textarea>
+
+  <input type="number" formControlName="preparationTimeInMinutes" placeholder="Preparation time [min]" class="form__input">
+
+  <ng-container *ngFor="let ingredient of ingredients.controls; let i = index; let isLast = last" formArrayName="ingredients">
+    <div class="form__ingredient-group" [formGroupName]="i">
+      <input type="text" id="ingredient-name" formControlName="name" class="form__input" placeholder="Ingredient Name">
+      <input type="text" id="ingredient-quantity" formControlName="quantity" class="form__input" placeholder="Ingredient quantity">
+      <button type="button" (click)="addIngredient()" *ngIf="isLast" class="form__button">&plus;</button>
+    </div>
+  </ng-container>
+  <div class="action-group">
+    <button type="button" class="form__button" (click)="cancel()">Cancel</button>
+    <button type="submit" [disabled]="recipeForm.invalid" class="form__button" >Submit</button>
+  </div>
+
+
+</form>

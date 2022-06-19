@@ -1,0 +1,25 @@
+.recipe {
+  display: flex;
+  flex-direction: column;
+  &__list {
+    list-style: none;
+  }
+  &__name {
+    display: inline-block;
+  }
+  &__header {
+    display: flex;
+    align-items: stretch;
+  }
+  &__button {
+    color: var(--color-accent);
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    &--delete {
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  &__logo {
+    width: 5rem;
+    height: 5rem;
+  }
+  &__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}

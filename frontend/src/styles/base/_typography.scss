@@ -1,0 +1,14 @@
+.header-primary {
+  color: var(--color-accent);
+}
+.header-secondary {
+  color: var(--color-light);
+}
+.link-primary{
+  text-decoration: none;
+  color: var(--color-light);
+  &:visited {
+    text-decoration: none;
+  color: var(--color-light);
+  }
+}

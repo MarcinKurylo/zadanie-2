@@ -1,0 +1,14 @@
+<div *ngIf="recipe" class="recipe">
+  <div class="recipe__header">
+    <h1 class="header-primary recipe__name">{{ recipe.name }}</h1>
+    <button class="recipe__button" [routerLink]="['edit']" [state]="{data: {recipe}}" >&#9998;</button>
+    <button class="recipe__button recipe__button--delete" (click)="openDialog()">&times;</button>
+  </div>
+  <span class="recipe__details">Description: {{ recipe.description }}</span>
+  <span class="recipe__time"> Preparation time: {{ recipe.preparationTimeInMinutes | time}}</span>
+  <h4 class="header-primary">Ingredients:</h4>
+  <ul class="recipe__list">
+    <li *ngFor="let ingredient of recipe.ingredients" class="recipe__ingredient">{{ ingredient.name }} - {{ ingredient.quantity }}</li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

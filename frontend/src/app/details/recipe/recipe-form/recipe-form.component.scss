@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  &__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-accent) ;
+    margin: 2rem 1rem;
+  }
+  &__ingredient-group {
+    display: flex;
+    align-items: center;
+  }
+  &__button {
+    border: none;
+    background-color: transparent;
+    color: var(--color-accent);
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    width: 50%;
+    cursor: pointer;
+    &:disabled {
+      color: gray;
+      cursor: not-allowed;
+    }
+  }
+}
+.ng-invalid.ng-touched:not(form) {
+  border-color: red;
+}

@@ -1,0 +1,13 @@
+.modal {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__close {
+    border: none;
+    background-color: transparent;
+    color: red;
+    font-size: 1.5rem;
+    transform: translateY(-1rem);
+  }
+}

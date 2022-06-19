@@ -1,0 +1,8 @@
+<div class="modal">
+  <div class="modal__header">
+    <h3 class="header-primary">{{data.header || 'Confirm Action'}}</h3>
+    <button class="modal__button modal__button--close" (click)="dialogRef.close()">&times;</button>
+  </div>
+  <span>{{data.txt}}</span>
+  <button class="modal__button" (click)="dialogRef.close(true)">Ok</button>
+</div>

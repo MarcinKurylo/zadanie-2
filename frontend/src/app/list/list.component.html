@@ -1,0 +1,10 @@
+<div class="list">
+  <div class="list__header-wrap">
+    <h1 class="list__header header-secondary">Recipes List</h1>
+    <button class="list__add-button" [routerLink]="['/recipe/create']" >Add new recipe &plus;</button>
+  </div>
+  <input type="text" class="list__search" placeholder="Recipe search" [(ngModel)]="searchInput" (ngModelChange)="onSearchChange()">
+  <ul class="list__list">
+    <li *ngFor="let recipe of recipesList" class="list__item"><a [routerLink]="['/recipe', recipe._id]" routerLinkActive="list__item--active" class="link-primary" >{{ recipe.name }}</a></li>
+  </ul>
+</div>
